@@ -1,199 +1,121 @@
-# CDM — Carbon Download Manager
+# 🚀 CDM | مدیر دانلود کربن
 
-**A powerful, feature-rich download manager inspired by Internet Download Manager (IDM).**
+**CDM (Carbon Download Manager)** یک نرم‌افزار مدیریت دانلود پیشرفته و چندبخشی است که با زبان Python و فریم‌ورک PyQt6 توسعه داده شده است.
 
-CDM is a modern desktop download manager built with Python and PyQt6. It is designed to make downloading files easier, faster, and more organized through multi-connection downloads, intelligent queues, scheduling, browser integration, and a highly customizable interface.
-
-With support for segmented downloading, pause and resume, automatic file organization, HLS streams, and an advanced download Grabber, CDM brings essential download management tools together in one application.
+هدف CDM ارائه تجربه‌ای سریع، ساده و قابل‌سفارشی‌سازی برای مدیریت دانلودهاست؛ با امکاناتی مانند دانلود چنداتصالی، توقف و ادامه دانلود، صف‌بندی، زمان‌بندی، اتصال به مرورگر و پشتیبانی از لینک‌های HLS.
 
 ---
 
-## ✨ Features
+## ✨ امکانات و قابلیت‌ها
 
-### ⚡ Advanced Download Engine
-- Multi-connection and segmented downloads.
-- Up to 32 simultaneous connections per download.
-- Pause and resume supported downloads.
-- Real-time download speed monitoring.
-- Live progress bars and estimated remaining time.
-- Automatic retry on download failures.
-- HTTP Range support detection.
-- Automatic file size and download information detection.
-- Configurable connection and buffer settings.
+### ⚡ مدیریت و افزایش سرعت دانلود
+- دانلود چندبخشی و چنداتصالی
+- امکان استفاده از حداکثر ۳۲ اتصال هم‌زمان برای هر دانلود
+- توقف و ادامه دانلودها
+- پشتیبانی از دانلودهای صف‌بندی‌شده
+- مدیریت هم‌زمان چندین دانلود
+- نمایش سرعت دانلود و زمان باقی‌مانده
+- محدودسازی سرعت دانلود
 
-### 🌐 Browser Integration
-- Companion browser extension integration.
-- Capture download links directly from your browser.
-- Receive multiple selected links from the browser.
-- Support for browser cookies and Referer headers.
-- Optional automatic download interception.
-- Floating download basket.
+### 🌐 یکپارچگی با مرورگر
+- دریافت لینک‌های دانلود از مرورگر
+- دریافت اطلاعات موردنیاز درخواست، مانند Cookie و Referer
+- دریافت لینک از طریق کلیپ‌بورد
+- سبد شناور برای دسترسی سریع به قابلیت‌های دانلود
+- امکان ارسال مستقیم دانلود به برنامه
 
-### 🕷 Advanced Grabber
-- Scan web pages for downloadable files.
-- Extract multiple download links from a webpage.
-- Filter files by extension.
-- Configure scanning depth.
-- Restrict scanning to the same domain.
-- Select discovered files for batch downloading.
+### 🎬 پشتیبانی از ویدئو و HLS
+- شناسایی لینک‌های HLS با فرمت `.m3u8`
+- پشتیبانی از دانلود محتوای مبتنی بر HLS
 
-### 📋 Download Management
-- Multiple download queues.
-- Independent queue configurations.
-- Simultaneous queue execution.
-- Batch download support.
-- Generate download links from URL patterns.
-- Import and export download lists.
-- JSON, CSV, and TXT support.
-- Automatic file categorization.
-- Separate folders for different file types.
-- Search and filter downloads.
-- Persistent download history.
+### 🕷 گربر هوشمند (Grabber)
+- جست‌وجوی لینک‌های دانلود در صفحات وب
+- امکان تعیین عمق جست‌وجو از ۱ تا ۳
+- محدودکردن جست‌وجو به دامنه اصلی
+- فیلترکردن فایل‌ها بر اساس پسوند
+- امکان جست‌وجوی انواع فایل‌های قابل دریافت
 
-### 🗓 Smart Scheduling
-- Schedule downloads by date and time.
-- Configure daily and weekly schedules.
-- Set automatic queue start and stop times.
-- Configure download retries.
-- Automatically open files after completion.
-- Automatically shut down the computer after downloads.
-- Run selected queues automatically.
+### 📋 صف‌بندی و زمان‌بندی
+- ساخت و مدیریت صف‌های دانلود
+- شروع خودکار صف‌ها
+- زمان‌بندی دانلودها
+- خاموش‌کردن خودکار سیستم
+- مدیریت دانلودهای گروهی
 
-### 🎬 HLS Download Support
-- Download HLS streams using `.m3u8` playlists.
-- Automatic selection of the highest-bandwidth playlist variant.
-- Parallel segment downloading.
-- Support for AES-128 encrypted HLS streams.
-- Combine downloaded segments into a single output file.
+### 📦 دانلود گروهی
+- افزودن چندین لینک به‌صورت هم‌زمان
+- ساخت گروهی لینک با استفاده از الگوی دارای `*`
+- تعیین شماره شروع، پایان و فاصله شماره‌ها
+- واردکردن و خروجی‌گرفتن از فهرست لینک‌ها
 
-### 🎨 Customization
-- 17 built-in interface themes.
-- Light and dark appearance options.
-- Custom font size.
-- Adjustable interface layout.
-- Custom download directories.
-- Persian and English-friendly interface elements.
-- Optional Persian numerals.
-- Configurable file size and speed units.
+### 🎨 رابط کاربری و شخصی‌سازی
+- رابط کاربری فارسی و راست‌چین
+- ۱۷ پوسته و تم مختلف
+- امکان شخصی‌سازی ظاهر برنامه
+- پشتیبانی از اعداد فارسی
+- تنظیم واحد نمایش سرعت و حجم
+- دسته‌بندی خودکار فایل‌های دانلودی
 
-### ⚙️ Advanced Settings
-- Configurable download speed limits.
-- Scheduled bandwidth limitations.
-- HTTP proxy support.
-- SSL verification settings.
-- Custom User-Agent.
-- Configurable connection timeout.
-- Automatic retry configuration.
-- Disk space checking.
-- Download logging.
-- System tray integration.
-- Windows startup integration.
-- Clipboard URL monitoring.
-- Custom file naming and duplicate handling.
+### ⚙️ تنظیمات پیشرفته
+- تنظیم پروکسی
+- تنظیم User-Agent
+- تنظیم مهلت انتظار درخواست‌ها
+- تعیین تعداد تلاش مجدد
+- مدیریت تأیید گواهی SSL
+- محدودیت سرعت در ساعات مشخص
+- بررسی فضای خالی دیسک
+- ثبت گزارش عملکرد و خطاها
+- اجرا در ناحیه اعلان ویندوز
+- اجرای خودکار هنگام روشن‌شدن ویندوز
+
+### 🗂 مدیریت دانلودها
+- جست‌وجو و فیلتر دانلودها
+- دسته‌بندی فایل‌ها
+- ذخیره اطلاعات دانلودها
+- نگهداری تاریخچه دانلودها
+- واردکردن و خروجی‌گرفتن اطلاعات در قالب‌های JSON، CSV و TXT
 
 ---
 
-## 🖥 Technology Stack
+## 🛠 فناوری‌های استفاده‌شده
 
-CDM is built using:
+| فناوری | کاربرد |
+|---|---|
+| Python | زبان برنامه‌نویسی اصلی |
+| PyQt6 | طراحی رابط کاربری |
+| Requests | مدیریت درخواست‌های HTTP |
+| Threading | اجرای عملیات دانلود به‌صورت هم‌زمان |
+| JSON | ذخیره تنظیمات و اطلاعات دانلودها |
 
-- **Python** — Core application logic.
-- **PyQt6** — Desktop graphical user interface.
-- **Requests** — HTTP communication and file downloading.
-- **Threading** — Parallel download operations.
-- **JSON** — Application settings and download persistence.
 
----
 
-## 🚀 Installation
+##
+## 🔒 حریم خصوصی
 
-### Requirements
+CDM برای ذخیره تنظیمات و اطلاعات مدیریت دانلود از فایل‌های محلی استفاده می‌کند.
 
-- Python 3.10 or newer recommended.
-- pip package manager.
-
-### Install dependencies
-
-```bash
-pip install PyQt6 requests
-```
-
-For AES-128 encrypted HLS support:
-
-```bash
-pip install cryptography
-```
-
-### Run CDM
-
-Clone the repository:
-
-```bash
-git clone https://github.com/YOUR_USERNAME/CDM.git
-```
-
-Navigate to the project directory:
-
-```bash
-cd CDM
-```
-
-Run the application:
-
-```bash
-python cdm.py
-```
+در زمان دانلود، درخواست‌ها مستقیماً به سرورهای ارائه‌دهنده فایل ارسال می‌شوند. اطلاعاتی مانند Cookie و Referer نیز در صورت دریافت از مرورگر می‌توانند برای تکمیل درخواست دانلود استفاده شوند.
 
 ---
 
-## 📁 Project Structure
+## 🤝 مشارکت در توسعه
 
-```text
-CDM/
-│
-├── cdm.py
-├── cdmlogo.png
-├── Irancell_Duran-Medium.ttf
-├── README.md
-└── requirements.txt
-```
+از مشارکت برنامه‌نویسان و علاقه‌مندان برای بهبود CDM استقبال می‌کنیم.
+
+اگر با مشکلی مواجه شدید یا پیشنهادی برای افزودن قابلیت جدید دارید، می‌توانید در بخش Issues گیت‌هاب آن را ثبت کنید.
 
 ---
 
-## 💾 Data & Configuration
+## ⚠️ سلب مسئولیت
 
-CDM stores its settings and download information locally on your computer.
-
-- Download history: `~/.cdm_items.json`
-- Application settings: `~/.cdm_settings.json`
-- Download logs: `~/.cdm_log.txt` (when enabled)
-
-Your download configuration and preferences remain available between application sessions.
+CDM یک پروژه مستقل و الهام‌گرفته از قابلیت‌های نرم‌افزارهای مدیریت دانلود است و هیچ وابستگی رسمی به Internet Download Manager (IDM) ندارد.
 
 ---
 
-## 🔒 Privacy
+<div align="center">
 
-CDM is designed as a local desktop application. Download management, application settings, and history are handled locally.
+**CDM – Carbon Download Manager**
 
-Downloads may communicate with the servers hosting the requested files. Browser integration can also use cookies and Referer information when enabled.
+مدیریت هوشمند دانلود، سریع‌تر و ساده‌تر.
 
----
-
-## ⚠️ Disclaimer
-
-CDM is an independent download manager inspired by the functionality of Internet Download Manager (IDM).
-
-It is not affiliated with, endorsed by, or associated with Internet Download Manager or its developers.
-
-Users are responsible for ensuring that their downloads comply with applicable laws and the terms of the websites they access.
-
----
-
-## 📌 Project Status
-
-CDM is under active development.
-
-Features, performance, compatibility, and the user interface may change between releases.
-
-**CDM — Download Smarter. Download Faster.**
+</div>
